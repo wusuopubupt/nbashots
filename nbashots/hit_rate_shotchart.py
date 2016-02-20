@@ -4,7 +4,6 @@ import pandas as pd
 import config
 from charts import *
 from api import *
-import sys
 
 # Fix non-browser request issue
 HEADERS = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'}
