@@ -17,19 +17,17 @@ headers = response.json()['resultSets'][0]['headers']
 # Grab the shot chart dat v   deda
 shots = response.json()['resultSets'][0]['rowSet']
 
+# pandas groupby sum
 shot_df = pd.DataFrame(shots, columns=headers)
 grouped = shot_df.groupby([shot_df['SHOT_TYPE'],shot_df['SHOT_ZONE_AREA']])
 for (shot_type, shot_zone_area),group in grouped:
     print shot_type, shot_zone_area, group['SHOT_MADE_FLAG'].sum(),group['SHOT_ATTEMPTED_FLAG'].sum(),group['SHOT_MADE_FLAG'].mean()
-
-sys.exit()
 
 # View the head of the DataFrame and all its columns
 from IPython.display import display
 with pd.option_context('display.max_columns', None):
     display(shot_df2.head(200))
  
-  
 # create a 15:28 window
 plt.figure(figsize=(7.5,14))
 # draw scatter plot by x and y
