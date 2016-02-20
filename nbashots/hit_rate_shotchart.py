@@ -26,7 +26,7 @@ for (shot_type, shot_zone_area),group in grouped:
 # View the head of the DataFrame and all its columns
 from IPython.display import display
 with pd.option_context('display.max_columns', None):
-    display(shot_df2.head(200))
+    display(shot_df.head(200))
  
 # create a 15:28 window
 plt.figure(figsize=(7.5,14))
@@ -45,7 +45,7 @@ plt.figure(figsize=(7.5,14))
       'w'     white
       =====   =======
 """
-plt.scatter(shot_df2.LOC_X, shot_df2.LOC_Y, c='r',alpha=0.4)
+plt.scatter(shot_df.LOC_X, shot_df.LOC_Y, c='r',alpha=0.4)
 draw_court(outer_lines=True)
 # Descending values along the axis from left to right
 plt.xlim(300,-300)
